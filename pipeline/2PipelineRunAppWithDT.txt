@@ -2,7 +2,7 @@ node {
    def mvnHome
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
-      git 'https://github.com/grabnerandi/SpringBootBookstoreWithProblems'
+      git 'https://github.com/cpclarknz/SpringBootBookstoreWithProblems'
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
@@ -47,7 +47,7 @@ node {
      // Run the maven build
      env.JAVA_HOME="${tool 'JDK8'}"
      // will do a quick wget to hit the endpoints once - wait 5 seconds so that the servers can start
-     sh "sleep 20"
+     sh "sleep 30"
      sh "wget http://${appip}:9090/recommended"
      sh "wget http://${appip}:9080/to-read"
    }
